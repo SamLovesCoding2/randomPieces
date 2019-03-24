@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package testversion;
+
+/**
+ *
+ * @author lupeiyu
+ */
+public class TestVersion
+{
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)
+    {
+        boolean str = xyzMiddle("Axyz");
+        System.out.println(str);
+    }
+
+    public static boolean xyzMiddle(String str)
+    {
+
+        String strr = str;
+        char x;
+        char y;
+        
+        boolean solved;
+        int xCount = 0;
+        int yCount = 0;
+        int index = 0;
+        
+        index = strr.indexOf('x');
+        
+        x = strr.charAt(index - 1);
+        y = strr.charAt(index + 3);
+        if(strr.charAt(strr.length()-1) == 'z'){
+        for (int k = 0; k < strr.length(); k++)
+        {
+            if (strr.charAt(k) == x)
+            {
+                xCount++;
+            }
+            if (strr.charAt(k) == y)
+            {
+                yCount++;
+            }
+        }
+        }else 
+        {
+                }
+        int difference = Math.abs(xCount - yCount);
+        if (difference > 2)
+        {
+            solved = false;
+        } else
+        {
+            solved = true;
+        }
+        return solved;
+    }
+
+}
